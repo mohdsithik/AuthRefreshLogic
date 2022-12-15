@@ -1,0 +1,26 @@
+[
+    {
+        "email": "robinsharmaa@protonmail.com",
+        "email_password": "test@123",
+        "instagram_username": "robinsharmaa_1",
+        "instagram_password": "test@123",
+        "cookie": "ig_nrcb=1; mid=YlfCJwAEAAFv_NOTuiy--TMu1iLC; ig_did=CE70084F-9B34-4700-BCBD-BA696391CA62; fbm_124024574287414=base_domain=.instagram.com; datr=EwjLYpRDztB3Oa9oiJGwuDhg; shbid="12459\05451535022140\0541701500032:01f7230c12b618f595c1795804d7e870e38e8da441203491cc5b74f009f2fc9c3a6c03f3"; shbts="1669964032\05451535022140\0541701500032:01f7d1901188c4171902c63df11f700b51a022d5fbfe42bca76cff35dd8edc49b92cb106"; dpr=1.5; csrftoken=57Gh80iptKk9YPmqgfLdn6BmwXlgZbvT; ds_user_id=56918247023; sessionid=56918247023:DP6OlhSIy5gCxW: 3:AYfZneGatDyBQJ7DWqj85GXWcWdi9aalzpiNCpXT1g; rur="VLL\05456918247023\0541701500512:01f713c6473518ab484e7af19ca9606261c063db550f658d14cb90ebab9779530a748d43"",
+        "csrftoken": "57Gh80iptKk9YPmqgfLdn6BmwXlgZbvT"
+    },
+    {
+        "email":"kavinchennai@protonmail.com",
+        "email_password": "Test@1234",
+        "instagram_username": "kavinchennai08",
+        "instagram_password": "Test@1234",
+        "cookie": "dpr=2; mid=Y4nRtQAEAAEBfJs3kZZKvmqL3Fgh; ig_did=C6F9B876-174A-4409-BFBB-53622225F0E6; ig_nrcb=1; csrftoken=l62KrINv33VUyc31a9UCGVtgcAhFuPMR; ds_user_id=56588685657; sessionid=56588685657:o8T6fytV0yKQKw:19:AYf0iY4OMaQ1piPHcMQdqkC7B9R2Ztoh2R_oyVoFsg; datr=xtGJY8CJPjuTAiIep1tWLMCH; rur="EAG\05456588685657\0541701512545:01f759362a28b547511badc1f60dbd9e64aedd2de2adffaa4e6a0bd8e00c189fd8940e62"",
+        "csrftoken": "l62KrINv33VUyc31a9UCGVtgcAhFuPMR"
+    },
+    {
+        "email":"kavinchennai@protonmail.com",
+        "email_password": "Test@1234",
+        "instagram_username": "kavinchennai08",
+        "instagram_password": "Test@1234",
+        "cookie": "dpr=2; mid=Y4nRtQAEAAEBfJs3kZZKvmqL3Fgh; ig_did=C6F9B876-174A-4409-BFBB-53622225F0E6; ig_nrcb=1; csrftoken=l62KrINv33VUyc31a9UCGVtgcAhFuPMR; ds_user_id=56588685657; sessionid=56588685657:o8T6fytV0yKQKw:19:AYf0iY4OMaQ1piPHcMQdqkC7B9R2Ztoh2R_oyVoFsg; datr=xtGJY8CJPjuTAiIep1tWLMCH; rur="EAG\05456588685657\0541701512545:01f759362a28b547511badc1f60dbd9e64aedd2de2adffaa4e6a0bd8e00c189fd8940e62"",
+        "csrftoken": "l62KrINv33VUyc31a9UCGVtgcAhFuPMR"
+    }
+]

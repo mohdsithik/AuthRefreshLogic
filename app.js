@@ -15,7 +15,7 @@ app.use(express.urlencoded({
     extended: true
 }));
 
-app.get('/', verifyAccessToken, async (req, res, next) => {
+app.get('/hello', async (req, res, next) => {
     res.send('Hello ALL')
 })
 
@@ -36,7 +36,7 @@ app.use((err, req, res, next) => {
 })
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

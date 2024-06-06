@@ -6,7 +6,7 @@ module.exports = {
     signAccessToken: (userId) => {
         return new Promise((resolve, reject) => {
             const payload ={}
-            const secret = process.env.ACCESS_TOKEN_SECRET
+            const secret = 'ACCESS_TOKEN_SECRET'
             const options = {
                 expiresIn: '5min',
             }
@@ -26,7 +26,7 @@ module.exports = {
         const bearerToken = authHeader.split(' ')
         const token = bearerToken[1]
         console.log(token);
-        JWT.verify(token,process.env.ACCESS_TOKEN_SECRET,(err,payload)=>{
+        JWT.verify('ACCESS_TOKEN_SECRET',(err,payload)=>{
             if(err){
                 const message = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.message
                 return next(createError.Unauthorized(message))
@@ -39,7 +39,7 @@ module.exports = {
     signRefreshToken: (userId) => {
         return new Promise((resolve, reject) => {
             const payload ={}
-            const secret = process.env.REFRESH_TOKEN_SECRET
+            const secret = 'REFRESH_TOKEN_SECRET'
             const options = {
                 expiresIn: '1y',
                 audience: userId,
@@ -54,7 +54,7 @@ module.exports = {
     },
     verifyRefreshToken :(refreshToken) =>{
         return new Promise((resolve, reject) =>{
-            JWT.verify(refreshToken,process.env.REFRESH_TOKEN_SECRET,(err,payload)=>{
+            JWT.verify(refreshToken,'REFRESH_TOKEN_SECRET',(err,payload)=>{
                 if(err) return reject(createError.Unauthorized())
                 const userId = payload.aud
                 resolve(userId)

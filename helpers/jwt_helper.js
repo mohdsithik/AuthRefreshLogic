@@ -8,7 +8,7 @@ module.exports = {
             const payload ={}
             const secret = 'ACCESS_TOKEN_SECRET'
             const options = {
-                expiresIn: '5min',
+                expiresIn: '1min',
             }
 
             JWT.sign(payload, secret, options,(err,token) => {
@@ -21,12 +21,14 @@ module.exports = {
         })
     },
     verifyAccessToken : (req, res, next) => {
+
+        console.log('req==============>',req);
         if(!req.headers['authorization']) return next(createError.Unauthorized())
         const authHeader = req.headers['authorization']
         const bearerToken = authHeader.split(' ')
         const token = bearerToken[1]
         console.log(token);
-        JWT.verify('ACCESS_TOKEN_SECRET',(err,payload)=>{
+        JWT.verify(token,'ACCESS_TOKEN_SECRET',(err,payload)=>{
             if(err){
                 const message = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.message
                 return next(createError.Unauthorized(message))
@@ -62,4 +64,4 @@ module.exports = {
         })
     }
 
-}
+}   

@@ -3,7 +3,7 @@ const router = express.Router();
 const createError = require('http-errors');
 const User = require('../models/user.model');
 const {authSchema} = require('../helpers/validation_schema');
-const {signAccessToken,signRefreshToken,verifyRefreshToken} = require('../helpers/jwt_helper');
+const {signAccessToken,signRefreshToken,verifyRefreshToken, verifyAccessToken} = require('../helpers/jwt_helper');
 
 router.post('/register',async(req, res, next)=>{
     try {
@@ -36,6 +36,7 @@ router.post('/login',async(req, res, next)=>{
 
         const accessToken = await signAccessToken(user.id)
         const refreshToken = await signRefreshToken(user.id)
+        console.log("triggered");
 
         res.send({accessToken,refreshToken})
     } catch (error) {
@@ -57,6 +58,192 @@ router.post('/refresh-token',async(req, res, next)=>{
         next(error)
     }
 });
+
+
+router.get('/getUserDetails',verifyAccessToken,async(req,res,next)=>{
+    res.send([
+        {
+          id: 1,
+          name: 'Alice Johnson',
+          position: 'Software Engineer',
+          department: 'Engineering',
+          email: 'alice.johnson@example.com',
+          phone: '555-1234',
+          salary: 75000
+        },
+        {
+          id: 2,
+          name: 'Bob Smith',
+          position: 'Product Manager',
+          department: 'Product',
+          email: 'bob.smith@example.com',
+          phone: '555-5678',
+          salary: 85000
+        },
+        {
+          id: 3,
+          name: 'Carol White',
+          position: 'UX Designer',
+          department: 'Design',
+          email: 'carol.white@example.com',
+          phone: '555-8765',
+          salary: 70000
+        },
+        {
+          id: 4,
+          name: 'David Brown',
+          position: 'Data Scientist',
+          department: 'Data Science',
+          email: 'david.brown@example.com',
+          phone: '555-4321',
+          salary: 90000
+        },
+        {
+          id: 5,
+          name: 'Eve Green',
+          position: 'HR Specialist',
+          department: 'Human Resources',
+          email: 'eve.green@example.com',
+          phone: '555-6789',
+          salary: 60000
+        },
+        {
+          id: 1,
+          name: 'Alice Johnson',
+          position: 'Software Engineer',
+          department: 'Engineering',
+          email: 'alice.johnson@example.com',
+          phone: '555-1234',
+          salary: 75000
+        },
+        {
+          id: 2,
+          name: 'Bob Smith',
+          position: 'Product Manager',
+          department: 'Product',
+          email: 'bob.smith@example.com',
+          phone: '555-5678',
+          salary: 85000
+        },
+        {
+          id: 3,
+          name: 'Carol White',
+          position: 'UX Designer',
+          department: 'Design',
+          email: 'carol.white@example.com',
+          phone: '555-8765',
+          salary: 70000
+        },
+        {
+          id: 4,
+          name: 'David Brown',
+          position: 'Data Scientist',
+          department: 'Data Science',
+          email: 'david.brown@example.com',
+          phone: '555-4321',
+          salary: 90000
+        },
+        {
+          id: 5,
+          name: 'Eve Green',
+          position: 'HR Specialist',
+          department: 'Human Resources',
+          email: 'eve.green@example.com',
+          phone: '555-6789',
+          salary: 60000
+        },
+        {
+          id: 1,
+          name: 'Alice Johnson',
+          position: 'Software Engineer',
+          department: 'Engineering',
+          email: 'alice.johnson@example.com',
+          phone: '555-1234',
+          salary: 75000
+        },
+        {
+          id: 2,
+          name: 'Bob Smith',
+          position: 'Product Manager',
+          department: 'Product',
+          email: 'bob.smith@example.com',
+          phone: '555-5678',
+          salary: 85000
+        },
+        {
+          id: 3,
+          name: 'Carol White',
+          position: 'UX Designer',
+          department: 'Design',
+          email: 'carol.white@example.com',
+          phone: '555-8765',
+          salary: 70000
+        },
+        {
+          id: 4,
+          name: 'David Brown',
+          position: 'Data Scientist',
+          department: 'Data Science',
+          email: 'david.brown@example.com',
+          phone: '555-4321',
+          salary: 90000
+        },
+        {
+          id: 5,
+          name: 'Eve Green',
+          position: 'HR Specialist',
+          department: 'Human Resources',
+          email: 'eve.green@example.com',
+          phone: '555-6789',
+          salary: 60000
+        },
+        {
+          id: 1,
+          name: 'Alice Johnson',
+          position: 'Software Engineer',
+          department: 'Engineering',
+          email: 'alice.johnson@example.com',
+          phone: '555-1234',
+          salary: 75000
+        },
+        {
+          id: 2,
+          name: 'Bob Smith',
+          position: 'Product Manager',
+          department: 'Product',
+          email: 'bob.smith@example.com',
+          phone: '555-5678',
+          salary: 85000
+        },
+        {
+          id: 3,
+          name: 'Carol White',
+          position: 'UX Designer',
+          department: 'Design',
+          email: 'carol.white@example.com',
+          phone: '555-8765',
+          salary: 70000
+        },
+        {
+          id: 4,
+          name: 'David Brown',
+          position: 'Data Scientist',
+          department: 'Data Science',
+          email: 'david.brown@example.com',
+          phone: '555-4321',
+          salary: 90000
+        },
+        {
+          id: 5,
+          name: 'Eve Green',
+          position: 'HR Specialist',
+          department: 'Human Resources',
+          email: 'eve.green@example.com',
+          phone: '555-6789',
+          salary: 60000
+        }
+      ])
+})
 
 router.delete('/logout',async(req, res, next)=>{
     res.send("logout route")

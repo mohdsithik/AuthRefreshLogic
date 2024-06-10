@@ -1,4 +1,6 @@
 const express = require('express');
+const cors = require('cors'); 
+
 const morgan = require('morgan');
 const createError = require('http-errors');
 require('dotenv').config()
@@ -15,9 +17,20 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+const corsOptions = {
+    credentials: true,
+    origin: ['http://localhost:3000', 'https://2935-27-7-14-156.ngrok-free.app'] // Whitelist the domains you want to allow
+};
+
+app.use(cors(corsOptions)); // Use the cors middleware with your options
+
+
+
 app.get('/hello', async (req, res, next) => {
     res.send('Hello ALL')
 })
+
+
 
 app.use('/auth', AuthRoute);
 
